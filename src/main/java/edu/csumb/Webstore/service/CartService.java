@@ -81,11 +81,11 @@ public class CartService {
                     }
                 }
             }
-        }
-        if (newCart != null) {
+
             newCart.getProducts().clear();
             cartRepository.save(newCart);
         }
+    
         return newCart;
     }
 
