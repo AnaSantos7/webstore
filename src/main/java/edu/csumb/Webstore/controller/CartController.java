@@ -27,10 +27,10 @@ public class CartController {
         return cartService.updateCart(username, prod_id, quantity);
     }
 
-    @RequestMapping(method = RequestMethod.PATCH, value = "/cart/checkout/{username}")
+    @RequestMapping(method = RequestMethod.GET, value = "/cart/checkout/{username}")
     @ApiOperation(value = "Clears user's cart, and removes the products from stock.")
-    public void checkOut(@RequestParam String username) {
-        cartService.checkOut(username);
+    public Cart checkOut(@RequestParam String username) {
+        return cartService.checkOut(username);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/cart/getAll")
