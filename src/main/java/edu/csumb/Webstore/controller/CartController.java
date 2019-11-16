@@ -21,13 +21,13 @@ public class CartController {
         return cartService.addProductToCart(username, prod_id, quantity);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/cart/{username}/{prod_id}/{quantity}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/cart/{username}/{prod_id}/{quantity}")
     @ApiOperation(value = "Updates the cart's quantity of a product or removes product from cart.")
     public Cart updateCart(@RequestParam String username, @RequestParam String prod_id, @RequestParam Integer quantity) {
         return cartService.updateCart(username, prod_id, quantity);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/cart/checkout/{username}")
+    @RequestMapping(method = RequestMethod.GET, value = "/cart/checkout/{username}")
     @ApiOperation(value = "Clears user's cart, and removes the products from stock.")
     public Cart checkOut(@RequestParam String username) {
         return cartService.checkOut(username);
