@@ -6,7 +6,6 @@
 package edu.csumb.Webstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,19 +44,19 @@ public class ProductController
         return productService.example();
     }
     @RequestMapping(method = RequestMethod.POST, value = "/products/add")
-    @ApiOperation(value = "")
+    @ApiOperation(value = "Add a product to database")
     public void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/products/get{id}")
-    @ApiOperation(value = "")
+    @ApiOperation(value = "Get a product by id")
     public Product getProductById(@RequestParam String id) {
         return productService.getProductById(id);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/products/getAll")
-    @ApiOperation(value = "")
+    @ApiOperation(value = "Get all the products in the database")
     public Iterable<Product> getAll() {
         return productService.getAll();
     }
