@@ -72,14 +72,14 @@ public class CartService {
 
             for(String key : products.keySet()){
                 Optional<Product> prod = productRepository.findById(key);
-                if(prod.isPresent()){
-                    currProduct = prod.get();
-                    // if (currProduct.getStock().intValue() > 0) {
-                    //     Integer temp = (currProduct.getStock() - products.get(key));
-                    //     currProduct.setStock(temp);
-                    //     // productRepository.save(currProduct);
-                    // }
-                }
+                // if(prod.isPresent()){
+                //     currProduct = prod.get();
+                //     // if (currProduct.getStock().intValue() > 0) {
+                //     //     Integer temp = (currProduct.getStock() - products.get(key));
+                //     //     currProduct.setStock(temp);
+                //     //     // productRepository.save(currProduct);
+                //     // }
+                // }
             }
         }
         if(newCart != null){
