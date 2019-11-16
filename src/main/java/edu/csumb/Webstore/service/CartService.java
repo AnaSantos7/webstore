@@ -27,8 +27,11 @@ public class CartService {
             cart = checkCart.get();
             cart.setProducts(prod_id, quantity);
         }
-        if(cart != null)
-            cartRepository.save(cart);
+        else {
+            cart = new Cart();
+            cart.setProducts(prod_id, quantity);
+        }
+        cartRepository.save(cart);
 
         return cart;
     }
