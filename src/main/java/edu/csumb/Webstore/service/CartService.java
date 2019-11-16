@@ -29,6 +29,7 @@ public class CartService {
         }
         else {
             cart = new Cart();
+            cart.setUsername(username);
             cart.setProducts(prod_id, quantity);
         }
         cartRepository.save(cart);
