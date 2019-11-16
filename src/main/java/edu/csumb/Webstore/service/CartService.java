@@ -55,6 +55,7 @@ public class CartService {
                 newCart.getProducts().put(prod_id, value);
         }
         
+        cartRepository.save(newCart);
         return newCart;
     }
 
@@ -79,7 +80,6 @@ public class CartService {
                         productRepository.save(currProduct);
                     }
                 }
-
             }
         }
         if (newCart != null) {
