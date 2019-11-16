@@ -68,20 +68,20 @@ public class CartService {
         if(userCart.isPresent()){
             newCart = userCart.get();
         
-            HashMap<String,Integer> products = newCart.getProducts();
+            // HashMap<String,Integer> products = newCart.getProducts();
 
-            for(String key : products.keySet()){
-                Optional<Product> prod = productRepository.findById(key);
-                if(prod.isPresent()){
-                    currProduct = prod.get();
-                    if (currProduct.getStock().intValue() > 0) {
-                        Integer temp = (currProduct.getStock() - products.get(key));
-                        currProduct.setStock(temp);
-                        productRepository.save(currProduct);
-                    }
-                }
+            // for(String key : products.keySet()){
+            //     Optional<Product> prod = productRepository.findById(key);
+            //     if(prod.isPresent()){
+            //         currProduct = prod.get();
+            //         if (currProduct.getStock().intValue() > 0) {
+            //             Integer temp = (currProduct.getStock() - products.get(key));
+            //             currProduct.setStock(temp);
+            //             productRepository.save(currProduct);
+            //         }
+            //     }
 
-            }
+            // }
         }
         if(newCart != null){
             newCart.getProducts().clear();
