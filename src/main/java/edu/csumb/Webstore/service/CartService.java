@@ -48,7 +48,7 @@ public class CartService {
 
         if(newCart.getProducts() != null){
             Integer temp = newCart.getProducts().get(prod_id);
-            Integer value = (temp + quantity);
+            Integer value = quantity;
             if(value.intValue() == 0)
                 newCart.getProducts().remove(prod_id);
             else
