@@ -59,7 +59,7 @@ public class CartService {
         return newCart;
     }
 
-    public Cart checkOut(String username) {
+    public void checkOut(String username) {
         Product currProduct = null;
         Cart newCart = null;
        
@@ -86,7 +86,7 @@ public class CartService {
             cartRepository.save(newCart);
         }
     
-        return newCart;
+        // return newCart;
     }
 
     public Iterable<Cart> getAll() {
